@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Best Calculator</title>
+    <style>
+        #number1 {
+            margin-left: 570px;
+        }
+        #number2 {
+            margin-right: 570px;
+        }
+        #answer {
+            margin-left: 600px;
+            margin-right: 600px;
+        }
+        #answerBox {
+            width: 100px;
+        }
+        #label {
+            margin-left: 610px;
+            margin-right: 610px;
+        }
+        #answerBox2 {
+            margin-left: 585px;
+            margin-right: 585px;
+        }
+        input {
+            width: 50px;
+            border-width: 3px;
+            border-style: solid;
+            border-radius: 5px;
+        }
+        button {
+            margin-left: 625px;
+            margin-right: 625px;
+        }
+    </style>
+    <script>
+        var num1;
+        var num2;
+        var answer;
+
+        function add() {
+            num1 = parseInt(document.getElementById("number1").value);
+            num2 = parseInt(document.getElementById("number2").value);
+            answer = (num1 + num2);
+            document.getElementById("answerBox").value = answer;
+        }
+        function sub() {
+            num1 = parseInt(document.getElementById("number1").value);
+            num2 = parseInt(document.getElementById("number2").value);
+            answer = (num1 - num2);
+            document.getElementById("answerBox").value = answer;
+        }
+        function mult() {
+            num1 = parseInt(document.getElementById("number1").value);
+            num2 = parseInt(document.getElementById("number2").value);
+            answer = (num1 * num2);
+            document.getElementById("answerBox").value = answer;
+        }
+        function div() {
+            num1 = parseInt(document.getElementById("number1").value);
+            num2 = parseInt(document.getElementById("number2").value);
+            answer = (num1 / num2);
+            document.getElementById("answerBox").value = answer;
+        }
+        function perc() {
+            num1 = parseInt(document.getElementById("number1").value);
+            num2 = parseInt(document.getElementById("number2").value);
+            answer = (num1 / num2) * 100;
+            document.getElementById("answerBox").value = answer;
+        }
+
+    </script>
+</head>
+<body>
+
+<h1 align="center">
+    Welcome to the best calculator ever!!
+</h1>
+
+<h4 align="center">
+    Enter your desired numbers and then select your operation:
+</h4>
+
+<div>
+    <input type="text" id="number1">
+    &nbsp; &nbsp;
+    <input type="text" id="number2">
+</div>
+
+<p>
+    <button onclick="add()">+</button>
+</p>
+
+<p>
+    <button onclick="sub()">-</button>
+</p>
+
+<p>
+    <button onclick="mult()">x</button>
+</p>
+
+<p>
+    <button onclick="div()">/</button>
+</p>
+
+<p>
+    <button onclick="perc()">%</button>
+</p>
+
+<p id="answer">
+
+    <div id="label">
+        <label for="answerBox">Answer:</label>
+    </div>
+
+    <div id="answerBox2">
+        <input type="text" readonly id="answerBox">
+    </div>
+
+</p>
+
+</body>
+</html>
