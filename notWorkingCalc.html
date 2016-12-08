@@ -1,50 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font:120% 'Luminari'">
 <head>
     <meta charset="UTF-8">
     <title>Best Calculator</title>
     <style>
+        body {
+            background-image: url('hell.jpg');
+            background-size: cover;
+        }
+        #troll {
+            border: groove 10px #533331;
+            background-color: rgba(76, 0, 4, 0.89);
+            width: 220px;
+            height: 110px;
+            color: white;
+            font-size: larger;
+        }
+        #troll:hover {
+            color: #533331;
+            border: groove 10px rgba(76, 0, 4, 0.89);
+            background-color:white;
+            transition-duration: .7s;
+        }
+        fieldset {
+            margin-right: 450px;
+            margin-left: 450px;
+            border: groove 20px #533331;
+            background-color: rgba(76, 0, 4, 0.49);
+        }
         #number1 {
-            margin-left: 570px;
+            margin-left: 165px;
+            color: #533331;
+            border: groove 10px rgba(76, 0, 4, 0.89);
+            background-color: white;
+            font-size: x-small;
+        }
+        #number1:hover {
+            color: white;
+            border: groove 10px #533331;
+            background-color: rgba(76, 0, 4, 0.89);
+            transition-duration: .7s;
         }
         #number2 {
-            margin-right: 570px;
+            color: #533331;
+            border: groove 10px rgba(76, 0, 4, 0.89);
+            background-color: white;
+            font-size: larger;
         }
-        #answer {
-            margin-left: 600px;
-            margin-right: 600px;
+        #number2:hover {
+            color: white;
+            border: groove 10px #533331;
+            background-color: rgba(76, 0, 4, 0.89);
+            transition-duration: .7s;
         }
         #answerBox {
+            margin-left: 180px;
             width: 100px;
-        }
-        #label {
-            margin-left: 610px;
-            margin-right: 610px;
+            color: #533331;
+            border: groove 10px rgba(76, 0, 4, 0.89);
+            background-color: white;
+            font-size: larger;
         }
         #answerBox2 {
-            margin-left: 585px;
-            margin-right: 585px;
-        }
-        #goBack {
-            margin-left: 593px;
-            margin-right: 607px;
+            margin-left: 199px;
+            color: white;
         }
         input {
             width: 50px;
-            border-width: 3px;
-            border-style: solid;
+            border:solid 3px;
             border-radius: 5px;
         }
         button {
-            margin-left: 625px;
-            margin-right: 625px;
+            width: 100px;
+            height: 40px;
+            margin-left: 188px;
+            color: white;
+            border: groove 10px #533331;
+            background-color: rgba(76, 0, 4, 0.89);
+        }
+        button:hover {
+            color: #533331;
+            border: groove 10px rgba(76, 0, 4, 0.89);
+            background-color:white;
+            transition-duration: .7s;
+        }
+        #percentage {
+            opacity: .6;
+            cursor: not-allowed;
+        }
+        #percentage:hover {
+            color: white;
+            border: groove 10px #533331;
+            background-color: rgba(76, 0, 4, 0.89);
+        }
+        #subtract {
+            opacity: .6;
+            cursor: not-allowed;
+        }
+        #subtract:hover {
+            color: white;
+            border: groove 10px #533331;
+            background-color: rgba(76, 0, 4, 0.89);
+        }
+        #addition {
+            margin-left: 40px;
+        }
+        #multiply {
+            margin-left: 100px;
+        }
+        #division {
+            margin-left: 250px;
         }
     </style>
     <script>
         var number1 = document.getElementById("number1");
         var number2 = document.getElementById("number2");
         var answer = "";
-
         function add() {
             answer = Math.floor((Math.random() * 151.6) + Math.random());
             document.getElementById("answerBox").value = answer;
@@ -53,16 +124,8 @@
             answer = Math.floor((Math.random() * 201.3) + Math.random());
             document.getElementById("answerBox").value = answer;
         }
-        function mult() {
-            answer = Math.floor((Math.random() * 189.4) + Math.random());
-            document.getElementById("answerBox").value = answer;
-        }
         function div() {
             answer = Math.floor((Math.random() * 128.1) + Math.random());
-            document.getElementById("answerBox").value = answer;
-        }
-        function perc() {
-            answer = Math.floor((Math.random() * 88.3) + Math.random());
             document.getElementById("answerBox").value = answer;
         }
     </script>
@@ -70,54 +133,51 @@
 <body>
 
 <h1 align="center">
-    Welcome to the best calculator ever!!
+    Welcome to the worst calculator ever!!
 </h1>
 
 <h4 align="center">
-    Enter your desired numbers and then select your operation:
+    Enter your desired numbers and then select your operation...if you dare:
 </h4>
+<fieldset>
+<div>
+    <input type="text" id="number1">
+    &nbsp; &nbsp;
+    <input type="text" id="number2">
+</div>
 
-    <div>
-        <input type="text" id="number1">
-        &nbsp; &nbsp;
-        <input type="text" id="number2">
-    </div>
+<p>
+    <button onclick="add()" id="addition">ADDITION</button>
+</p>
 
-    <p>
-        <button onclick="add()">+</button>
-    </p>
+<p>
+    <button onclick="sub()" id="subtract">SUBTRACT</button>
+</p>
 
-    <p>
-        <button onclick="sub()">-</button>
-    </p>
+<p>
+    <button id="multiply">MULTIPLY</button>
+</p>
 
-    <p>
-        <button onclick="mult()">x</button>
-    </p>
+<p>
+    <button id="division"onclick="div()">DIVISION</button>
+</p>
 
-    <p>
-        <button onclick="div()">/</button>
-    </p>
+<p>
+    <button id="percentage">PERCENTAGE</button>
+</p>
 
-    <p>
-        <button onclick="perc()">%</button>
-    </p>
+<p id="answer">
 
-    <p id="answer">
+<div id="label">
+    <label for="answerBox" id="answerBox2">Answer:</label>
+</div>
 
-        <div id="label">
-            <label for="answerBox">Answer:</label>
-        </div>
+<div>
+    <input type="text" readonly id="answerBox">
+</div>
 
-        <div id="answerBox2">
-            <input type="text" readonly id="answerBox">
-        </div>
-
-    </p>
-
-    <p>
-        <button  id="goBack" onclick="location.href = 'Browser Bug.html'">Go Back to Riddle</button>
-    </p>
-
+</p>
+</fieldset>
+<button onclick="location.href='trollPage.html'" id="troll">Go Back to Original Page to Try Again</button>
 </body>
 </html>
