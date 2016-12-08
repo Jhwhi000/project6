@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Troll</title>
+    <style>
+        button {
+            margin-left: 585px;
+            margin-right: 585px;
+        }
+        img {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+        }
+        div {
+            width: 1200px;
+            height: 800px;
+        }
+        fieldset {
+            width: 1275px;
+            height: 650px;
+            padding: 5px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body id="body">
+
+    <button onclick="spam()">CLICK ME FOR A PRIZE</button>
+
+    <p>
+
+    </p>
+
+<fieldset id="field">
+
+</fieldset>
+
+</body>
+<script>
+    var trollFace;
+    var numberOfFaces = 20;
+    var i;
+    var theField = document.getElementById("field");
+    var counter = 0;
+
+    function spam() {
+        for (i = 0; i < numberOfFaces; ++ i) {
+            trollFace = document.createElement("img");
+            trollFace.src = "troll.png";
+            trollFace.style.top = Math.floor(Math.random() * 570) + "px";
+            trollFace.style.left = Math.floor(Math.random() * 1195) + "px";
+            theField.appendChild(trollFace);
+            counter += 1;
+        }
+    }
+</script>
+</html>
